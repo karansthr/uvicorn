@@ -1,8 +1,8 @@
 try:
-    import websockets
+    pass
 except ImportError as exc:  # pragma: no cover
     try:
-        import wsproto
+        pass
     except ImportError as exc:
         AutoWebSocketsProtocol = None
     else:
