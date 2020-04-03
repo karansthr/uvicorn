@@ -24,7 +24,7 @@ class Multiprocess:
         self.should_exit = threading.Event()
         self.pid = os.getpid()
 
-    def signal_handler(self, sig, frame):
+    def signal_handler(self, _sig, _frame):
         """
         A signal handler that is registered with the parent process.
         """

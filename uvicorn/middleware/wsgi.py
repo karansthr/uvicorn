@@ -4,7 +4,7 @@ import io
 import sys
 
 
-def build_environ(scope, message, body):
+def build_environ(scope, _message, body):
     """
     Builds a scope and request message into a WSGI environ object.
     """

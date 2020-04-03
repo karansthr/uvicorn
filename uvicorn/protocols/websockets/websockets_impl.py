@@ -116,7 +116,7 @@ class WebSocketProtocol(websockets.WebSocketServerProtocol):
         await self.handshake_started_event.wait()
         return self.initial_response
 
-    def process_subprotocol(self, headers, available_subprotocols):
+    def process_subprotocol(self, _headers, _available_subprotocols):
         """
         We override the standard 'process_subprotocol' behavior here so that
         we return whatever subprotocol is sent in the 'accept' message.
@@ -135,7 +135,7 @@ class WebSocketProtocol(websockets.WebSocketServerProtocol):
         ]
         self.transport.write(b"".join(content))
 
-    async def ws_handler(self, protocol, path):
+    async def ws_handler(self, _protocol, _path):
         """
         This is the main handler function for the 'websockets' implementation
         to call into. We just wait for close then return, and instead allow

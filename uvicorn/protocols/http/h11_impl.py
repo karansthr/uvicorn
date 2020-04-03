@@ -62,7 +62,7 @@ class FlowControl:
             self._is_writable_event.set()
 
 
-async def service_unavailable(scope, receive, send):
+async def service_unavailable(_scope, _receive, send):
     await send(
         {
             "type": "http.response.start",
@@ -349,7 +349,7 @@ class RequestResponseCycle:
         transport,
         flow,
         logger,
-        access_logger,
+        _access_logger,
         access_log,
         default_headers,
         message_event,

@@ -1,5 +1,5 @@
 class LifespanOff:
-    def __init__(self, config):
+    def __init__(self, _config):
         self.should_exit = False
 
     async def startup(self):

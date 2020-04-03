@@ -42,7 +42,7 @@ HANDLED_SIGNALS = (
 logger = logging.getLogger("uvicorn.error")
 
 
-def print_version(ctx, param, value):
+def print_version(ctx, _param, value):
     if not value or ctx.resilient_parsing:
         return
     click.echo(
@@ -568,7 +568,7 @@ class Server:
             for sig in HANDLED_SIGNALS:
                 signal.signal(sig, self.handle_exit)
 
-    def handle_exit(self, sig, frame):
+    def handle_exit(self, _sig, _frame):
         if self.should_exit:
             self.force_exit = True
         else:
