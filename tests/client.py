@@ -71,7 +71,8 @@ class _ASGIAdapter(requests.adapters.HTTPAdapter):
             if body is None:
                 body_bytes = b""
             else:
-                assert isinstance(body, bytes)
+                if not isinstance(body, bytes):
+                    raise AssertionError
                 body_bytes = body
             return {"type": "http.request", "body": body_bytes}
 
